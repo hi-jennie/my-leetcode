@@ -8,6 +8,7 @@ public class ValidAnagram {
         System.out.println(isAnagram("anagram", "nagaram"));
     }
 
+
     public static boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
             return false;
