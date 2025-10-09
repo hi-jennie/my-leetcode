@@ -1,6 +1,8 @@
 package arrayAndhash;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ContainDuplicate {
     public static void main(String[] args) {
@@ -28,6 +30,18 @@ public class ContainDuplicate {
             if(nums[i] == nums[i +1]){
                 return true;
             }
+        }
+        return false;
+    }
+
+    // using HashSet --> don't allow duplicate
+    public boolean solution1(int[] nums) {
+        Set<Integer> seen = new HashSet<>();
+        for (int num : nums) {
+            if (seen.contains(num)) {
+                return true;
+            }
+            seen.add(num);
         }
         return false;
     }
