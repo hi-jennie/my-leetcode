@@ -23,7 +23,7 @@ public class LengthOfLastWord {
         return cArr.length;
     }
 
-    // best practices
+    // best practices //
     public static int mySolution2(String s) {
         String subStr = s.trim().replace(' ', '0');
         int lastIdx = subStr.lastIndexOf('0');
