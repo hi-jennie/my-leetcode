@@ -84,4 +84,24 @@ public class LongestMonotonicSubarray {
 
         return res;
     }
+
+    public int longestMonotonicSubarray(int[] nums) {
+        int inc = 1, dec = 1, res = 1;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                inc = dec = 1;
+            } else if (nums[i] > nums[i - 1]) {
+                inc = inc + 1;
+                dec = 1;
+            } else {
+                inc = 1;
+                dec = dec + 1;
+            }
+            // 每次循环都保存一下该轮比较的结果呢
+            res = Math.max(res, Math.max(inc, dec));
+        }
+
+        return res;
+    }
 }
